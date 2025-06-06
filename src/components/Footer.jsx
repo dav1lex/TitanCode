@@ -26,20 +26,6 @@ const Footer = () => {
                 ? 'Profesjonalne usługi tworzenia stron internetowych i aplikacji' 
                 : 'Professional web development and application services'}
             </p>
-            <div className={styles.footerSocial}>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-                <i className="fab fa-github"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </div>
           </div>
           
           <div className={styles.footerLinksWrapper}>
@@ -92,13 +78,13 @@ const Footer = () => {
                   <span className={styles.footerContactIcon}>
                     <i className="fas fa-envelope"></i>
                   </span>
-                  <a href="mailto:contact@titancode.dev">contact@titancode.dev</a>
+                  <a href="mailto:info@titancode.pl">info@titancode.pl</a>
                 </li>
                 <li className={styles.footerContactItem}>
                   <span className={styles.footerContactIcon}>
                     <i className="fas fa-phone"></i>
                   </span>
-                  <a href="tel:+48123456789">{t('contact_phone')}</a>
+                  <a href="tel:+48 511 118 916">+48 511 118 916</a>
                 </li>
               </ul>
             </div>
@@ -109,15 +95,7 @@ const Footer = () => {
           <div className={styles.footerCopyright}>
             <p>&copy; {currentYear} Titan Code. {t('footer_rights')}</p>
           </div>
-          <div className={styles.footerLinks}>
-            <Link to="/privacy-policy" className={styles.footerLegalLink}>
-              {t.locale === 'pl' ? 'Polityka Prywatności' : 'Privacy Policy'}
-            </Link>
-            <span className={styles.legalSeparator}>|</span>
-            <Link to="/terms" className={styles.footerLegalLink}>
-              {t.locale === 'pl' ? 'Warunki Korzystania' : 'Terms of Service'}
-            </Link>
-          </div>
+         
         </div>
       </div>
     </footer>

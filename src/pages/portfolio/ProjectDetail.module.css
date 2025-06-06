@@ -26,7 +26,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 80%;
   background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
 }
 
@@ -85,7 +85,7 @@
 .projectContent {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 0.5rem;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -243,11 +243,6 @@
   transition: all 0.3s ease;
 }
 
-.galleryItem:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
 .galleryItem img {
   width: 100%;
   height: auto;
@@ -274,6 +269,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  gap: 1rem;
 }
 
 .backButton {
@@ -290,18 +286,38 @@
   border: 1px solid var(--color-border);
 }
 
+.viewLiveButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-primary);
+}
+
+.viewLiveButton:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.viewLiveButton i {
+  transition: transform 0.3s ease;
+}
+
+.viewLiveButton:hover i {
+  transform: translateX(3px);
+}
+
 .backButton:hover {
   background-color: var(--color-primary);
   color: white;
   border-color: var(--color-primary);
-}
-
-.backButton i {
-  transition: transform 0.3s ease;
-}
-
-.backButton:hover i {
-  transform: translateX(-3px);
 }
 
 /* In-progress banner */

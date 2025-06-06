@@ -15,6 +15,7 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [formErrors, setFormErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,32 +25,56 @@ const Contact = () => {
     }));
   };
 
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.name.trim()) {
+      errors.name = locale === 'pl' ? 'Imię i nazwisko jest wymagane' : 'Name is required';
+    }
+    if (!formData.email.trim()) {
+      errors.email = locale === 'pl' ? 'Email jest wymagany' : 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = locale === 'pl' ? 'Adres email jest nieprawidłowy' : 'Email address is invalid';
+    }
+    if (!formData.subject.trim()) {
+      errors.subject = locale === 'pl' ? 'Temat jest wymagany' : 'Subject is required';
+    }
+    if (!formData.message.trim()) {
+      errors.message = locale === 'pl' ? 'Wiadomość jest wymagana' : 'Message is required';
+    }
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
+
     setLoading(true);
     setError('');
 
-    // TODO: This will be connected to PHP backend in the future
-    // For now, we simulate a successful submission
     try {
-      // Simulate API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      // Reset form and show success state
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+      const response = await fetch('/api/send_mail.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || (locale === 'pl' ? 'Wystąpił nieznany błąd.' : 'An unknown error occurred.'));
+      }
       
       setSubmitted(true);
-      setLoading(false);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
     } catch (err) {
-      setError(locale === 'pl' 
-        ? 'Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie później.'
-        : 'An error occurred while submitting the form. Please try again later.'
-      );
+      setError(err.message);
+    } finally {
       setLoading(false);
     }
   };
@@ -59,44 +84,20 @@ const Contact = () => {
     {
       icon: 'fas fa-envelope',
       title: locale === 'pl' ? 'Email' : 'Email',
-      value: 'contact@titancode.dev',
-      link: 'mailto:contact@titancode.dev'
+      value: 'info@titancode.pl',
+      link: 'mailto:info@titancode.pl'
     },
     {
       icon: 'fas fa-phone',
       title: locale === 'pl' ? 'Telefon' : 'Phone',
-      value: '+48 123 456 789',
-      link: 'tel:+48123456789'
+      value: '+48 511 118 916',
+      link: 'tel:+48511118916'
     },
     {
       icon: 'fas fa-map-marker-alt',
       title: locale === 'pl' ? 'Lokalizacja' : 'Location',
       value: locale === 'pl' ? 'Warszawa, Polska' : 'Warsaw, Poland',
       link: 'https://goo.gl/maps/Poland'
-    }
-  ];
-
-  // Social media links
-  const socialLinks = [
-    {
-      icon: 'fab fa-facebook',
-      name: 'Facebook',
-      link: '#'
-    },
-    {
-      icon: 'fab fa-twitter',
-      name: 'Twitter',
-      link: '#'
-    },
-    {
-      icon: 'fab fa-instagram',
-      name: 'Instagram',
-      link: '#'
-    },
-    {
-      icon: 'fab fa-linkedin',
-      name: 'LinkedIn',
-      link: '#'
     }
   ];
 
@@ -153,28 +154,7 @@ const Contact = () => {
                   ))}
                 </div>
                 
-                <div className={styles.socialLinks}>
-                  <h4>
-                    {locale === 'pl'
-                      ? 'Obserwuj nas'
-                      : 'Follow us'
-                    }
-                  </h4>
-                  <div className={styles.socialIcons}>
-                    {socialLinks.map((social, index) => (
-                      <a 
-                        key={index} 
-                        href={social.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        aria-label={social.name}
-                        className={styles.socialIcon}
-                      >
-                        <i className={social.icon}></i>
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                
               </div>
             </div>
             
@@ -225,8 +205,9 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder={locale === 'pl' ? 'Twoje imię i nazwisko' : 'Your full name'}
-                        className={styles.formInput}
+                        className={`${styles.formInput} ${formErrors.name ? styles.inputError : ''}`}
                       />
+                      {formErrors.name && <span className={styles.inlineError}>{formErrors.name}</span>}
                     </div>
                     
                     <div className={styles.formGroup}>
@@ -239,8 +220,9 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder={locale === 'pl' ? 'Twój adres email' : 'Your email address'}
-                        className={styles.formInput}
+                        className={`${styles.formInput} ${formErrors.email ? styles.inputError : ''}`}
                       />
+                      {formErrors.email && <span className={styles.inlineError}>{formErrors.email}</span>}
                     </div>
                     
                     <div className={styles.formGroup}>
@@ -255,8 +237,9 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         placeholder={locale === 'pl' ? 'Temat Twojej wiadomości' : 'Subject of your message'}
-                        className={styles.formInput}
+                        className={`${styles.formInput} ${formErrors.subject ? styles.inputError : ''}`}
                       />
+                      {formErrors.subject && <span className={styles.inlineError}>{formErrors.subject}</span>}
                     </div>
                     
                     <div className={styles.formGroup}>
@@ -271,8 +254,9 @@ const Contact = () => {
                         required
                         rows="6"
                         placeholder={locale === 'pl' ? 'Treść Twojej wiadomości' : 'Your message'}
-                        className={styles.formTextarea}
+                        className={`${styles.formTextarea} ${formErrors.message ? styles.inputError : ''}`}
                       ></textarea>
+                      {formErrors.message && <span className={styles.inlineError}>{formErrors.message}</span>}
                     </div>
                     
                     {error && <div className={styles.errorMessage}>{error}</div>}

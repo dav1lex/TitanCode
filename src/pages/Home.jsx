@@ -24,9 +24,9 @@ const Home = () => {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+48-123-456-789",
+      "telephone": "+48-511-118-916",
       "contactType": "customer service",
-      "email": "contact@titancode.dev",
+      "email": "info@titancode.pl",
       "areaServed": "PL",
       "availableLanguage": ["English", "Polish"]
     },

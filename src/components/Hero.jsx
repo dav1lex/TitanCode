@@ -51,8 +51,6 @@ const Hero = () => {
         <div className={styles.heroContent}>
           <div className={styles.heroTextContent}>
             <h1 className={styles.heroTitle}>{t('hero_title')}</h1>
-            <p className={styles.heroSubtitle}>{t('hero_subtitle')}</p>
-            
             <div className={styles.features}>
               <div className={styles.feature}>
                 <div className={styles.featureIcon}>

@@ -9,67 +9,67 @@ const EnglishTutor = () => {
 
   // Project data
   const project = {
-    title: 'English Tutor Website',
-    titlePl: 'Strona Nauczyciela Angielskiego',
-    client: 'Sarah Johnson',
-    clientPl: 'Sarah Johnson',
-    year: '2023',
+    title: 'Kurs8Klasisty - Webpage for English Tutor',
+    titlePl: 'Kurs8Klasisty - Strona dla Nauczyciela Angielskiego',
+    client: 'Kurs8Klasisty',
+    clientPl: 'Kurs8Klasisty',
+    year: '2025',
     duration: '4 weeks',
-    durationPl: '4 tygodnie',
+    durationPl: '4 tygodni',
     category: 'Web Development',
     categoryPl: 'Rozwój Web',
-    technologies: ['React', 'Node.js', 'MongoDB', 'CSS Modules'],
-    technologiesPl: ['React', 'Node.js', 'MongoDB', 'Moduły CSS'],
-    mainImage: '/images/portfolio/english-tutor/main.jpg',
+    technologies: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL', 'Tailwind CSS', 'Alpine.js'],
+    technologiesPl: ['HTML', 'CSS', 'PHP','JavaScript', 'MySQL', 'Tailwind CSS', 'Alpine.js'],
+    mainImage: '/images/portfolio/english-tutor/main.png',
     description: [
-      'This website was developed for an English tutor to showcase her teaching services, course offerings, and to provide an easy way for students to book lessons.',
-      'The project included a modern, responsive design with an emphasis on usability and clear information architecture. A custom booking system was integrated to allow students to see availability and schedule lessons.'
+      'This project is a complete web solution for "Solidny Od Podszewki," an online course preparing Polish 8th-grade students for their English language exam. The platform consists of a public-facing promotional website and an integrated, full-featured blog, all managed through a secure and intuitive administrative back-end.',
+      'The project masterfully combines a dynamic PHP backend with a static site generation capability. This allows for easy, real-time content management via the admin panel while offering the option to deploy a highly performant and secure static version of the site.'
     ],
     descriptionPl: [
-      'Ta strona została stworzona dla nauczycielki języka angielskiego, aby zaprezentować jej usługi nauczania, ofertę kursów oraz umożliwić uczniom łatwe rezerwowanie lekcji.',
-      'Projekt obejmował nowoczesny, responsywny design z naciskiem na użyteczność i klarowną architekturę informacji. Zintegrowany został niestandardowy system rezerwacji, pozwalający uczniom na sprawdzenie dostępności i zaplanowanie lekcji.'
+      'Ten projekt to kompletne rozwiązanie internetowe dla "Solidny Od Podszewki", kursu online przygotowującego polskich uczniów 8 klas do egzaminu z języka angielskiego. Platforma składa się z publicznej strony promocyjnej oraz zintegrowanego, w pełni funkcjonalnego bloga, zarządzanych przez bezpieczny i intuicyjny panel administracyjny.',
+      'Projekt umiejętnie łączy dynamiczny backend PHP z możliwością generowania statycznej strony. Umożliwia to łatwe zarządzanie treścią w czasie rzeczywistym przez panel administracyjny, oferując jednocześnie opcję wdrożenia wysoce wydajnej i bezpiecznej statycznej wersji strony.'
     ],
     features: [
-      'Responsive design for all devices',
-      'Course catalog with detailed information',
-      'Student testimonials section',
-      'Integrated booking system',
-      'Contact form with validation',
-      'Blog section for sharing learning resources',
-      'Multi-language support (English and Polish)',
-      'SEO optimization'
+      'Hybrid Content Strategy (dynamic PHP backend with static site generation)',
+      'Modern & Responsive Frontend using Tailwind CSS and Alpine.js',
+      'Comprehensive SEO Optimization',
+      'Asynchronous Content Loading with AJAX',
+      'Secure Admin Panel',
+      'Complete blog post management system',
+      'Contact form with server-side validation',
+      'One-click static site generation'
     ],
     featuresPl: [
-      'Responsywny design dla wszystkich urządzeń',
-      'Katalog kursów ze szczegółowymi informacjami',
-      'Sekcja z opiniami uczniów',
-      'Zintegrowany system rezerwacji',
-      'Formularz kontaktowy z walidacją',
-      'Sekcja bloga do udostępniania materiałów edukacyjnych',
-      'Obsługa wielu języków (angielski i polski)',
-      'Optymalizacja SEO'
+      'Hybrydowa strategia treści (dynamiczny backend PHP z generowaniem statycznych stron)',
+      'Nowoczesny i responsywny frontend z użyciem Tailwind CSS i Alpine.js',
+      'Kompleksowa optymalizacja SEO',
+      'Asynchroniczne ładowanie treści za pomocą AJAX',
+      'Bezpieczny panel administracyjny',
+      'Kompletny system zarządzania wpisami na blogu',
+      'Formularz kontaktowy z walidacją po stronie serwera',
+      'Generowanie statycznej strony jednym kliknięciem'
     ],
-    challenge: 'The main challenge was creating an intuitive booking system that would sync with the tutor\'s calendar and prevent double bookings while being easy for students to use.',
-    challengePl: 'Głównym wyzwaniem było stworzenie intuicyjnego systemu rezerwacji, który synchronizowałby się z kalendarzem nauczyciela i zapobiegał podwójnym rezerwacjom, będąc jednocześnie łatwym w użyciu dla uczniów.',
-    solution: 'We implemented a custom calendar solution integrated with Google Calendar API that automatically updates availability and sends confirmation emails to both the tutor and students.',
-    solutionPl: 'Zaimplementowaliśmy niestandardowe rozwiązanie kalendarza zintegrowane z API Google Calendar, które automatycznie aktualizuje dostępność i wysyła e-maile z potwierdzeniem zarówno do nauczyciela, jak i uczniów.',
-    results: 'The website resulted in a 40% increase in booking requests within the first month after launch, and significantly reduced the administrative time spent on scheduling.',
-    resultsPl: 'Strona zaowocowała 40% wzrostem liczby zapytań o rezerwację w ciągu pierwszego miesiąca po uruchomieniu i znacznie skróciła czas administracyjny poświęcany na planowanie.',
+    challenge: 'The main challenge was creating a system that could function both as a dynamic CMS with real-time updates and as a high-performance static site, while ensuring a seamless user experience and maintaining robust security.',
+    challengePl: 'Głównym wyzwaniem było stworzenie systemu, który mógłby funkcjonować zarówno jako dynamiczny CMS z aktualizacjami w czasie rzeczywistym, jak i jako wysokowydajna strona statyczna, zapewniając jednocześnie płynne doświadczenie użytkownika i zachowując solidne bezpieczeństwo.',
+    solution: 'We implemented a hybrid architecture that leverages PHP for the backend with MySQL database, combined with modern frontend technologies like Tailwind CSS and Alpine.js. The admin panel includes comprehensive CRUD functionality and a WYSIWYG editor, while the static site generation capability improves performance and security.',
+    solutionPl: 'Zaimplementowaliśmy hybrydową architekturę wykorzystującą PHP dla backendu z bazą danych MySQL, w połączeniu z nowoczesnymi technologiami frontendu, takimi jak Tailwind CSS i Alpine.js. Panel administracyjny zawiera kompleksową funkcjonalność CRUD i edytor WYSIWYG, podczas gdy możliwość generowania statycznych stron poprawia wydajność i bezpieczeństwo.',
+    results: 'The platform successfully provides a comprehensive learning resource for 8th-grade students, combining promotional content with educational blog posts. The admin panel allows for easy content management, while the SEO optimization ensures high visibility in search results.',
+    resultsPl: 'Platforma z powodzeniem zapewnia kompleksowe zasoby edukacyjne dla uczniów 8 klas, łącząc treści promocyjne z edukacyjnymi wpisami na blogu. Panel administracyjny umożliwia łatwe zarządzanie treścią, podczas gdy optymalizacja SEO zapewnia wysoką widoczność w wynikach wyszukiwania.',
     images: [
       {
-        url: '/images/portfolio/english-tutor/screenshot1.jpg',
-        caption: 'Homepage with hero section and course offerings',
-        captionPl: 'Strona główna z sekcją hero i ofertą kursów'
+        url: '/images/portfolio/english-tutor/k2.png',
+        caption: 'Homepage with course information and blog section',
+        captionPl: 'Strona główna z informacjami o kursie i sekcją bloga'
       },
       {
-        url: '/images/portfolio/english-tutor/screenshot2.jpg',
-        caption: 'Booking system interface with calendar',
-        captionPl: 'Interfejs systemu rezerwacji z kalendarzem'
+        url: '/images/portfolio/english-tutor/k3.png',
+        caption: 'Admin panel with blog post management',
+        captionPl: 'Panel administracyjny z zarządzaniem wpisami na blogu'
       },
       {
-        url: '/images/portfolio/english-tutor/screenshot3.jpg',
-        caption: 'Testimonials section with student feedback',
-        captionPl: 'Sekcja z opiniami i informacjami zwrotnymi od uczniów'
+        url: '/images/portfolio/english-tutor/k4.png',
+        caption: 'Blog page with category filtering',
+        captionPl: 'Strona bloga z filtrowaniem kategorii'
       }
     ]
   };
@@ -77,8 +77,8 @@ const EnglishTutor = () => {
   // Prepare the page title and description
   const pageTitle = locale === 'pl' ? project.titlePl : project.title;
   const pageDescription = locale === 'pl'
-    ? `Szczegóły projektu ${project.titlePl} - nowoczesna strona internetowa dla nauczyciela języka angielskiego.`
-    : `Project details for ${project.title} - a modern website for an English tutor.`;
+    ? `Szczegóły projektu ${project.titlePl} - platforma kursów online i blog dla uczniów 8 klas.`
+    : `Project details for ${project.title} - an online course and blog platform for 8th-grade students.`;
   
   // Structured data for project case study
   const structuredData = {
@@ -107,13 +107,14 @@ const EnglishTutor = () => {
       "@id": "https://titancode.dev/portfolio/english-tutor"
     },
     "keywords": [
-      "English tutor website",
-      "educational website",
-      "booking system",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "web development"
+      "Online course platform",
+      "Educational website",
+      "Blog platform",
+      "PHP",
+      "MySQL",
+      "Tailwind CSS",
+      "Alpine.js",
+      "Web development"
     ]
   };
 
@@ -251,6 +252,10 @@ const EnglishTutor = () => {
                   <i className="fas fa-arrow-left"></i>
                   {locale === 'pl' ? 'Powrót do portfolio' : 'Back to Portfolio'}
                 </Link>
+                <a href="https://kurs8klasisty.pl" target="_blank" rel="noopener noreferrer" className={styles.viewLiveButton}>
+                  <i className="fas fa-external-link-alt"></i>
+                  {locale === 'pl' ? 'Zobacz stronę' : 'Visit Website'}
+                </a>
               </div>
             </div>
           </div>

@@ -9,66 +9,54 @@ const Portfolio = () => {
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const carouselRef = useRef(null);
-  
+
   const projects = [
     {
       id: 1,
-      image: '/images/portfolio/english-tutor.svg',
+      image: '/images/portfolio/english-tutor/main.png',
       title: 'English Tutor Website',
-      titlePl: 'Strona Nauczyciela Angielskiego',
+      titlePl: 'Strona dla Nauczyciela Angielskiego',
       category: 'Web Development',
       categoryPl: 'Rozwój Web',
-      description: 'A modern website for an English tutor featuring course information, student testimonials, and an integrated booking system.',
-      descriptionPl: 'Nowoczesna strona dla nauczyciela angielskiego zawierająca informacje o kursach, opinie uczniów i zintegrowany system rezerwacji.',
+      description: 'A modern website for an English tutor featuring course information, blog functionality and admin panel.',
+      descriptionPl: 'Nowoczesna strona dla nauczyciela angielskiego zawierająca informacje o kursie, funkcjonalność bloga i panel administracyjny.',
       link: '/portfolio/english-tutor'
     },
     {
       id: 2,
-      image: '/images/portfolio/auction-portal.svg',
-      title: 'Auction Portal',
-      titlePl: 'Portal Aukcyjny',
+      image: '/images/portfolio/nanobid/n1.png',
+      title: 'NanoBid - Auction Portal',
+      titlePl: 'NanoBid - Portal Aukcyjny',
       category: 'Full Stack Application',
       categoryPl: 'Aplikacja Full Stack',
-      description: 'A comprehensive auction platform with user accounts, real-time bidding, secure payment processing, and seller dashboards.',
-      descriptionPl: 'Kompleksowa platforma aukcyjna z kontami użytkowników, licytacjami w czasie rzeczywistym, bezpiecznym przetwarzaniem płatności i panelami dla sprzedających.',
+      description: 'A comprehensive auction platform for online auctions, integrated with admin/user panels, proxy bidding or pre bidding functionality, lot management, user watchlist, bid history and more.',
+      descriptionPl: 'Kompleksowa platforma aukcyjna dla aukcji online, zintegrowana z panelami administracyjnymi/użytkowników, funkcjonalnością licytacji proxy lub przedlicytacji, zarządzaniem przedmiotami, listą obserwowanych przez użytkownika, historią licytacji i więcej.',
       link: '/portfolio/auction-portal'
     },
-    {
-      id: 3,
-      image: '/images/portfolio/commercial-project.svg',
-      title: 'Commercial Project',
-      titlePl: 'Projekt Komercyjny',
-      category: 'In Progress',
-      categoryPl: 'W Trakcie Realizacji',
-      description: 'An exciting commercial website currently in development. Stay tuned for the launch of this innovative digital solution.',
-      descriptionPl: 'Ekscytujący projekt komercyjny obecnie w trakcie realizacji. Śledź nas, aby nie przegapić premiery tego innowacyjnego rozwiązania cyfrowego.',
-      link: '/portfolio/commercial-project',
-      inProgress: true
-    }
   ];
-  
+
   const handleDotClick = (index) => {
     setActiveIndex(index);
   };
-  
+
   const handlePrevClick = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1));
   };
-  
+
   const handleNextClick = () => {
     setActiveIndex((prevIndex) => (prevIndex === projects.length - 1 ? 0 : prevIndex + 1));
   };
-  
+
   const handleTouchStart = (e) => {
     setStartX(e.touches[0].clientX);
     setIsDragging(true);
   };
-  
+
   const handleTouchMove = (e) => {
     if (!isDragging) return;
     const currentX = e.touches[0].clientX;
     const diff = startX - currentX;
-    
+
     if (Math.abs(diff) > 50) {
       if (diff > 0) {
         // Swipe left
@@ -80,21 +68,21 @@ const Portfolio = () => {
       setIsDragging(false);
     }
   };
-  
+
   const handleTouchEnd = () => {
     setIsDragging(false);
   };
-  
+
   const handleMouseDown = (e) => {
     setStartX(e.clientX);
     setIsDragging(true);
   };
-  
+
   const handleMouseMove = (e) => {
     if (!isDragging) return;
     const currentX = e.clientX;
     const diff = startX - currentX;
-    
+
     if (Math.abs(diff) > 50) {
       if (diff > 0) {
         // Swipe left
@@ -106,11 +94,11 @@ const Portfolio = () => {
       setIsDragging(false);
     }
   };
-  
+
   const handleMouseUp = () => {
     setIsDragging(false);
   };
-  
+
   return (
     <section className={styles.portfolio} id="portfolio">
       <div className="container">
@@ -118,18 +106,18 @@ const Portfolio = () => {
           <h2 className={styles.sectionTitle}>{t('portfolio_title')}</h2>
           <p className={styles.sectionDescription}>{t('portfolio_description')}</p>
         </div>
-        
+
         <div className={styles.portfolioCarouselContainer}>
-          <button 
-            className={`${styles.carouselControl} ${styles.prevControl}`} 
+          <button
+            className={`${styles.carouselControl} ${styles.prevControl}`}
             onClick={handlePrevClick}
             aria-label="Previous project"
           >
             <i className="fas fa-chevron-left"></i>
           </button>
-          
-          <div 
-            className={styles.portfolioCarousel} 
+
+          <div
+            className={styles.portfolioCarousel}
             ref={carouselRef}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -140,8 +128,8 @@ const Portfolio = () => {
             onMouseLeave={handleMouseUp}
           >
             {projects.map((project, index) => (
-              <div 
-                key={project.id} 
+              <div
+                key={project.id}
                 className={`${styles.projectCard} ${index === activeIndex ? styles.active : ''}`}
                 style={{ transform: `translateX(${(index - activeIndex) * 100}%)` }}
               >
@@ -165,27 +153,27 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
-          
-          <button 
-            className={`${styles.carouselControl} ${styles.nextControl}`} 
+
+          <button
+            className={`${styles.carouselControl} ${styles.nextControl}`}
             onClick={handleNextClick}
             aria-label="Next project"
           >
             <i className="fas fa-chevron-right"></i>
           </button>
         </div>
-        
+
         <div className={styles.carouselDots}>
           {projects.map((_, index) => (
-            <button 
-              key={index} 
+            <button
+              key={index}
               className={`${styles.carouselDot} ${index === activeIndex ? styles.active : ''}`}
               onClick={() => handleDotClick(index)}
               aria-label={`Go to project ${index + 1}`}
             />
           ))}
         </div>
-        
+
         <div className={styles.portfolioFooter}>
           <Link to="/portfolio" className={styles.viewAllLink}>
             {t('view_all_projects')} <i className="fas fa-arrow-right"></i>

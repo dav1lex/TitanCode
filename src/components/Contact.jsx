@@ -85,7 +85,7 @@ const Contact = () => {
               </div>
               <div className={styles.contactText}>
                 <h3>{t('contact_email_title')}</h3>
-                <p>contact@titancode.dev</p>
+                <p>info@titancode.pl</p>
               </div>
             </div>
             
@@ -95,7 +95,7 @@ const Contact = () => {
               </div>
               <div className={styles.contactText}>
                 <h3>{t('contact_phone_title')}</h3>
-                <p>+48 123 456 789</p>
+                <p>+48 511 118 916</p>
               </div>
             </div>
             

@@ -283,6 +283,7 @@
 
 .primaryBtn:hover {
   background-color: var(--color-primary-dark);
+  color:#ffffff;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(var(--color-primary-rgb), 0.4);
 }

@@ -1,5 +1,5 @@
 import { useLanguage } from '../../hooks/useLanguage';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../components/SEO';
 import PageHeader from '../../components/PageHeader';
 import styles from './ProjectDetail.module.css';
 import { Link } from 'react-router-dom';
@@ -9,95 +9,103 @@ const AuctionPortal = () => {
 
   // Project data
   const project = {
-    title: 'Auction Portal',
-    titlePl: 'Portal Aukcyjny',
-    client: 'AuctionHub Inc.',
-    clientPl: 'AuctionHub Inc.',
-    year: '2023',
-    duration: '3 months',
-    durationPl: '3 miesiące',
+    title: 'NanoBid - An Auction Platform',
+    titlePl: 'NanoBid - Platforma Aukcyjna',
+    client: 'Self-initiated Project',
+    clientPl: 'Projekt Własny',
+    year: '2025',
+    duration: '4 months',
+    durationPl: '4 miesiące',
     category: 'Full Stack Application',
     categoryPl: 'Aplikacja Full Stack',
-    technologies: ['React', 'Express.js', 'Socket.io', 'PostgreSQL', 'Redis', 'AWS'],
-    technologiesPl: ['React', 'Express.js', 'Socket.io', 'PostgreSQL', 'Redis', 'AWS'],
-    mainImage: '/images/portfolio/auction-portal/main.jpg',
+    technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap 5', 'HTML5', 'CSS3', 'PHPMailer'],
+    technologiesPl: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap 5', 'HTML5', 'CSS3', 'PHPMailer'],
+    mainImage: '/images/portfolio/nanobid/n1.png',
     description: [
-      'The Auction Portal is a comprehensive platform that enables users to create accounts, list items for auction, bid on items in real-time, and complete secure transactions.',
-      'This full-stack application was built with scalability in mind, incorporating real-time bidding functionality, secure payment processing, and a robust notification system to keep users informed about auction activities.'
+      'NanoBid is a lightweight and user-friendly online auction platform built from the ground up with vanilla PHP. It is designed for auction houses that want to run their own timed online auctions without relying on expensive third-party services.',
+      'The application is built using a custom Model-View-Controller (MVC) architecture. This separation of concerns makes the code more organized, maintainable, and scalable.'
     ],
     descriptionPl: [
-      'Portal Aukcyjny to kompleksowa platforma umożliwiająca użytkownikom tworzenie kont, wystawianie przedmiotów na aukcję, licytowanie w czasie rzeczywistym oraz bezpieczne przeprowadzanie transakcji.',
-      'Ta aplikacja full-stack została zbudowana z myślą o skalowalności, zawiera funkcję licytacji w czasie rzeczywistym, bezpieczne przetwarzanie płatności oraz solidny system powiadomień informujący użytkowników o aktywnościach aukcyjnych.'
+      'NanoBid to lekka i przyjazna dla użytkownika platforma aukcyjna online, zbudowana od podstaw w czystym PHP. Jest przeznaczona dla domów aukcyjnych, które chcą prowadzić własne aukcje internetowe na czas, bez polegania na drogich usługach firm trzecich.',
+      'Aplikacja jest zbudowana w oparciu o niestandardową architekturę Model-View-Controller (MVC). Ten podział odpowiedzialności sprawia, że kod jest bardziej zorganizowany, łatwiejszy w utrzymaniu i skalowalny.'
     ],
     features: [
-      'User registration and authentication system',
-      'Real-time bidding with WebSockets',
-      'Detailed item listings with multiple photo uploads',
-      'Advanced search and filtering options',
-      'Secure payment processing',
-      'Seller and buyer dashboards',
-      'Automated email notifications',
-      'Admin panel for content moderation',
-      'Mobile responsive interface'
+      'Secure user registration with email confirmation, login, and password reset',
+      'Role-based access control (administrators and users)',
+      'Comprehensive admin dashboard for managing users, auctions, and lots',
+      'Full CRUD functionality for auctions and lots with image uploads',
+      'Proxy bidding system automatically bids on behalf of users',
+      'User watchlist to track interesting items',
+      'Clean and responsive UI built with Bootstrap 5'
     ],
     featuresPl: [
-      'System rejestracji i uwierzytelniania użytkowników',
-      'Licytacja w czasie rzeczywistym z wykorzystaniem WebSockets',
-      'Szczegółowe oferty przedmiotów z możliwością przesyłania wielu zdjęć',
-      'Zaawansowane opcje wyszukiwania i filtrowania',
-      'Bezpieczne przetwarzanie płatności',
-      'Panele dla sprzedających i kupujących',
-      'Zautomatyzowane powiadomienia e-mail',
-      'Panel administracyjny do moderacji treści',
-      'Interfejs dostosowany do urządzeń mobilnych'
+      'Bezpieczna rejestracja użytkownika z potwierdzeniem e-mail, logowaniem i resetowaniem hasła',
+      'Kontrola dostępu oparta na rolach (administratorzy i użytkownicy)',
+      'Kompleksowy panel administracyjny do zarządzania użytkownikami, aukcjami i przedmiotami',
+      'Pełna funkcjonalność CRUD dla aukcji i przedmiotów z przesyłaniem zdjęć',
+      'System licytacji z agentem (proxy bidding) automatycznie licytuje w imieniu użytkowników',
+      'Lista obserwowanych przedmiotów do śledzenia interesujących pozycji',
+      'Czysty i responsywny interfejs użytkownika zbudowany w oparciu o Bootstrap 5'
     ],
-    challenge: 'The main challenge was building a real-time bidding system that could handle thousands of concurrent users without latency issues, while ensuring data consistency across the system.',
-    challengePl: 'Głównym wyzwaniem było zbudowanie systemu licytacji w czasie rzeczywistym, który mógłby obsłużyć tysiące jednoczesnych użytkowników bez problemów z opóźnieniami, zapewniając jednocześnie spójność danych w całym systemie.',
-    solution: 'We implemented a combination of WebSockets for real-time communication and Redis for caching and pub/sub messaging, with a microservice architecture that allowed for horizontal scaling during peak auction times.',
-    solutionPl: 'Zaimplementowaliśmy kombinację WebSockets do komunikacji w czasie rzeczywistym i Redis do buforowania i komunikacji pub/sub, z architekturą mikroserwisową, która umożliwiła skalowanie horyzontalne w okresach szczytowych aukcji.',
-    results: 'The platform successfully launched with over 5,000 registered users in the first month and has processed more than 10,000 auctions with 99.9% uptime, even during peak bidding periods.',
-    resultsPl: 'Platforma została pomyślnie uruchomiona z ponad 5000 zarejestrowanych użytkowników w pierwszym miesiącu i przetworzyła ponad 10 000 aukcji z dostępnością 99,9%, nawet w okresach szczytowych licytacji.',
+    challenge: 'The primary challenge was to design and build a complete, secure, and reliable auction system from scratch using pure PHP, including a custom MVC framework. The goal was to avoid over-engineering and create a clean, maintainable codebase focused on core auction functionalities.',
+    challengePl: 'Głównym wyzwaniem było zaprojektowanie i zbudowanie od podstaw kompletnego, bezpiecznego i niezawodnego systemu aukcyjnego przy użyciu czystego PHP, włączając w to niestandardowy framework MVC. Celem było uniknięcie nadmiernej inżynierii i stworzenie czystej, łatwej w utrzymaniu bazy kodu skoncentrowanej na podstawowych funkcjonalnościach aukcyjnych.',
+    solution: 'A custom MVC architecture was implemented to structure the application logically. PDO with prepared statements is used for all database interactions to prevent SQL injection. A custom router handles all requests, directing them to the appropriate controllers. The frontend was built with Bootstrap 5, ensuring a professional and responsive user experience.',
+    solutionPl: 'Wdrożono niestandardową architekturę MVC w celu logicznego ustrukturyzowania aplikacji. Do wszystkich interakcji z bazą danych wykorzystano PDO z przygotowanymi instrukcjami w celu zapobiegania atakom SQL injection. Niestandardowy router obsługuje wszystkie żądania, kierując je do odpowiednich kontrolerów. Frontend został zbudowany przy użyciu Bootstrap 5, zapewniając profesjonalne i responsywne doświadczenie użytkownika.',
+    results: 'The project is fully functional, with all core features implemented and tested. It provides a solid foundation for a real-world auction platform, including a complete user authentication system, admin/user dashboards, full auction and lot management, a proxy bidding system, and a user watchlist. The development process followed a clear roadmap, resulting in clean and well-documented code.',
+    resultsPl: 'Projekt jest w pełni funkcjonalny, a wszystkie podstawowe funkcje zostały zaimplementowane i przetestowane. Stanowi solidną podstawę dla rzeczywistej platformy aukcyjnej, w tym kompletny system uwierzytelniania użytkowników, panele administracyjne i użytkownika, pełne zarządzanie aukcjami i przedmiotami, system licytacji z agentem oraz listę obserwowanych przez użytkownika. Proces tworzenia oprogramowania przebiegał zgodnie z przejrzystą mapą drogową, co zaowocowało czystym i dobrze udokumentowanym kodem.',
     images: [
       {
-        url: '/images/portfolio/auction-portal/screenshot1.jpg',
-        caption: 'Homepage with featured auctions',
-        captionPl: 'Strona główna z wyróżnionymi aukcjami'
+        url: '/images/portfolio/nanobid/n1.png',
+        caption: 'The main page of the auction portal',
+        captionPl: 'Główna strona portalu aukcyjnego'
       },
       {
-        url: '/images/portfolio/auction-portal/screenshot2.jpg',
-        caption: 'Real-time bidding interface',
-        captionPl: 'Interfejs licytacji w czasie rzeczywistym'
+        url: '/images/portfolio/nanobid/n2.png',
+        caption: 'Public auction page',
+        captionPl: 'Strona aukcji publicznej'
       },
       {
-        url: '/images/portfolio/auction-portal/screenshot3.jpg',
-        caption: 'Seller dashboard with analytics',
-        captionPl: 'Panel sprzedawcy z analityką'
+        url: '/images/portfolio/nanobid/n3.png',
+        caption: 'Lot detail page with bidding form',
+        captionPl: 'Strona szczegółów przedmiotu z formularzem licytacji'
       },
       {
-        url: '/images/portfolio/auction-portal/screenshot4.jpg',
-        caption: 'Mobile responsive design',
-        captionPl: 'Responsywny design mobilny'
+        url: '/images/portfolio/nanobid/n4.png',
+        caption: 'Admin dashboard',
+        captionPl: 'Panel administratora'
+      },
+      {
+        url: '/images/portfolio/nanobid/n5.png',
+        caption: 'Admin lot management page',
+        captionPl: 'Panel zarządzania przedmiotami'
+      },
+      {
+        url: '/images/portfolio/nanobid/n6.png',
+        caption: 'User dashboard',
+        captionPl: 'Panel użytkownika'
+      },
+      {
+        url: '/images/portfolio/nanobid/n7.png',
+        caption: 'User bid history',
+        captionPl: 'Historia licytacji użytkownika'
       }
     ]
   };
 
+  const pageTitle = locale === 'pl' ? project.titlePl : project.title;
+  const pageDescription = locale === 'pl'
+    ? `Szczegóły projektu ${project.titlePl} - lekka platforma aukcyjna zbudowana w PHP.`
+    : `Project details for ${project.title} - a lightweight auction platform built with PHP.`;
+
   return (
     <>
-      <Helmet>
-        <title>
-          {locale === 'pl' 
-            ? `${project.titlePl} - Portfolio | TitanCode` 
-            : `${project.title} - Portfolio | TitanCode`
-          }
-        </title>
-        <meta
-          name="description"
-          content={locale === 'pl'
-            ? `Szczegóły projektu ${project.titlePl} - zaawansowany portal aukcyjny z funkcjonalnością licytacji w czasie rzeczywistym.`
-            : `Project details for ${project.title} - advanced auction platform with real-time bidding functionality.`
-          }
-        />
-      </Helmet>
+      <SEO 
+        title={pageTitle}
+        description={pageDescription}
+        canonical="/portfolio/nanobid"
+        ogType="article"
+        ogImage={`https://titancode.dev${project.mainImage}`}
+      />
 
       <PageHeader
         title={locale === 'pl' ? project.titlePl : project.title}
