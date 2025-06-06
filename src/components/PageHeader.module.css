@@ -1,0 +1,104 @@
+.pageHeader {
+  position: relative;
+  padding: 60px 0 60px;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 40px;
+}
+
+.pageHeaderContent {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--color-text);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.pageDescription {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.pageTitleUnderline {
+  width: 10rem;
+  height: 4px;
+  background-color: var(--color-primary);
+  margin: 0 auto;
+  border-radius: 2px;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .pageHeader {
+    padding: 40px 0 50px;
+  }
+  
+  .pageTitle {
+    font-size: 2.8rem;
+  }
+  
+  .pageDescription {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 40px 0 40px;
+  }
+  
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+  
+  .pageDescription {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pageHeader {
+    padding: 40px 0 30px;
+  }
+  
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+  
+  .pageDescription {
+    font-size: 1rem;
+  }
+} 

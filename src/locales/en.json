@@ -1,0 +1,63 @@
+{
+  "site_title": "Titan Code - Web Developer Services",
+  "site_description": "Professional web development services including website creation, SEO optimization, and existing code optimization.",
+  
+  "nav_home": "Home",
+  "nav_services": "Services",
+  "nav_portfolio": "Portfolio",
+  "nav_about": "About Us",
+  "nav_pricing": "Pricing",
+  "nav_contact": "Contact",
+  
+  "hero_title": "Professional web development",
+  "hero_subtitle": "You ask, we build",
+  "view_services": "View Services",
+  "contact_me": "Contact Me",
+  
+  "services_title": "What We Do",
+  "services_description": "Professional web development solutions tailored to your business needs",
+  
+  "service_1_title": "Basic Web Development",
+  "service_1_description": "Ideal for trainers, teachers, and professionals who need a one-page website with unique design. Professional online presence with minimal complexity.",
+  
+  "service_2_title": "Complex Web Development",
+  "service_2_description": "Multi-page websites with blog functionality and content management capabilities. Perfect for businesses and organizations needing comprehensive online presence.",
+  
+  "service_3_title": "E-commerce Websites",
+  "service_3_description": "Complete online stores with secure payments, product management, order tracking, and HTTPS security. Start selling your products online with customized shopping experiences.",
+  
+  "service_4_title": "Custom Applications",
+  "service_4_description": "Live auction portals, university/school student portals, and large-scale business applications.",
+  
+  "service_5_title": "Automation & SEO",
+  "service_5_description": "Scripts for repetitive tasks, Excel data processing, bulk operations, and custom solutions for specific business problems. Automate your workflow and improve efficiency.",
+  
+  "portfolio_title": "Portfolio",
+  "portfolio_description": "Check out some of our recent projects",
+  "view_project": "View Project",
+  
+  "about_title": "Our Approach",
+  "about_description": "We believe in creating fast, secure, and unique websites",
+  
+  "why_not_cms_title": "Why Not Use WordPress or Another CMS?",
+  "why_not_cms_description": "While content management systems have their place, custom development offers significant advantages",
+  
+  "contact_title": "Get In Touch",
+  "contact_description": "Ready to start your project? Contact us today!",
+  "contact_name": "Your Name",
+  "contact_email": "Your Email",
+  "contact_message": "Your Message",
+  "contact_send": "Send Message",
+  "contact_address_title": "Address",
+  "contact_address": "Warsaw, Poland",
+  "contact_email_title": "Email",
+  "contact_phone_title": "Phone",
+  "contact_phone": "+48 123 456 789",
+  "contact_social_title": "Social Media",
+  
+  "footer_rights": "All rights reserved",
+  
+  "learn_more": "Learn more",
+  
+  "view_all_projects": "View all projects"
+} 

@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths if you have any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Point to sitemap
+Sitemap: https://titancode.pl/sitemap.xml 

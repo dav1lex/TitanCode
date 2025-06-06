@@ -1,0 +1,240 @@
+.approach {
+  padding: var(--section-spacing) 0 calc(var(--section-spacing) + 50px);
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+.sectionDescription {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+.approachCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.approachCard {
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.approachCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.approachCard:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.approachCard:hover::before {
+  height: 8px;
+}
+
+.approachIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  padding: 1rem;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: 50%;
+  line-height: 1;
+  transition: background-color 0.3s ease;
+}
+
+.approachCard:hover .approachIcon {
+  background-color: rgba(var(--color-primary-rgb), 0.2);
+}
+
+.approachTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.approachTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.approachCard:hover .approachTitle::after {
+  width: 60px;
+}
+
+.approachDescription {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.approachSummary {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  margin-top: 3rem;
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.approachSummary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at top right, rgba(var(--color-primary-rgb), 0.1), transparent 70%);
+  z-index: 0;
+}
+
+.summaryTitle {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.summaryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.summaryPoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.pointIcon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.summaryPoint:hover .pointIcon {
+  background-color: rgba(var(--color-primary-rgb), 0.2);
+}
+
+.pointContent h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.pointContent p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.shapeDivider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.shapeDivider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.shapeFill {
+  fill: var(--color-bg-tertiary);
+}
+
+@media (max-width: 992px) {
+  .approachCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .approachCards {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+  
+  .summaryPoint {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .pointIcon {
+    margin-bottom: 1rem;
+  }
+} 

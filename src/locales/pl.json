@@ -1,0 +1,62 @@
+{
+  "site_title": "Titan Code - Usługi Programisty Stron Internetowych",
+  "site_description": "Profesjonalne usługi tworzenia stron internetowych, optymalizacji SEO i optymalizacji istniejącego kodu.",
+  
+  "nav_home": "Strona Główna",
+  "nav_services": "Usługi",
+  "nav_portfolio": "Portfolio",
+  "nav_about": "O Nas",
+  "nav_pricing": "Cennik",
+  "nav_contact": "Kontakt",
+  
+  "hero_title": "Profesjonalne tworzenie stron internetowych",
+  "hero_subtitle": "Ty pytasz, my budujemy",
+  "view_services": "Zobacz Usługi",
+  "contact_me": "Skontaktuj Się",
+  
+  "services_title": "Co Robimy",
+  "services_description": "Profesjonalne rozwiązania webowe dopasowane do potrzeb Twojego biznesu",
+  
+  "service_1_title": "Podstawowy Rozwój Stron WWW",
+  "service_1_description": "Idealne rozwiązanie dla trenerów, nauczycieli, jednostronicowe witryny z unikalnym designem. Profesjonalna obecność online z minimalną złożonością.",
+  
+  "service_2_title": "Złożony Rozwój Stron WWW",
+  "service_2_description": "Rozbudowane witryny z wieloma podstronami, funkcjonalnością bloga i systemem zarządzania treścią. Idealne dla firm i organizacji.",
+  
+  "service_3_title": "Sklepy Internetowe",
+  "service_3_description": "Kompletne sklepy online z bezpieczną płatnością, zarządzaniem produktami, śledzeniem zamówień i zabezpieczeniami HTTPS. Sprzedawaj swoje produkty online.",
+  
+  "service_4_title": "Aplikacje Dla Przedsiębiorstw",
+  "service_4_description": "Niestandardowe portale aukcyjne, platformy edukacyjne dla uczelni i szkół. Rozwiązania dla złożonych procesów biznesowych i rozległych organizacji.",
+  
+  "service_5_title": "Automatyzacja i SEO",
+  "service_5_description": "Skrypty do automatyzacji powtarzalnych zadań, przetwarzania danych Excel, operacji masowych. Niestandardowe rozwiązania dla specyficznych problemów biznesowych.",
+  
+  "portfolio_title": "Portfolio",
+  "portfolio_description": "Zobacz nasze ostatnie projekty",
+  "view_project": "Zobacz Projekt",
+  "view_all_projects": "Zobacz Wszystkie Projekty",
+  
+  "about_title": "Nasze Podejście",
+  "about_description": "Wierzymy w tworzenie szybkich, bezpiecznych i unikalnych stron internetowych",
+  
+  "why_not_cms_title": "Dlaczego Nie Używać WordPressa Lub Innego CMS?",
+  "why_not_cms_description": "Chociaż systemy zarządzania treścią mają swoje miejsce, tworzenie niestandardowe oferuje znaczące korzyści",
+  
+  "contact_title": "Skontaktuj się",
+  "contact_description": "Gotowy do rozpoczęcia projektu? Skontaktuj się z nami już dziś!",
+  "contact_name": "Twoje imię",
+  "contact_email": "Twój e-mail",
+  "contact_message": "Twoja wiadomość",
+  "contact_send": "Wyślij wiadomość",
+  "contact_address_title": "Adres",
+  "contact_address": "Warszawa, Polska",
+  "contact_email_title": "E-mail",
+  "contact_phone_title": "Telefon",
+  "contact_phone": "+48 123 456 789",
+  "contact_social_title": "Media Społecznościowe",
+  
+  "footer_rights": "Wszelkie prawa zastrzeżone",
+  
+  "learn_more": "Dowiedz się więcej"
+} 

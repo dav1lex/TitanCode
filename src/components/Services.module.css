@@ -1,0 +1,437 @@
+.services {
+  padding: var(--section-spacing) 0 calc(var(--section-spacing) + 60px);
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+.sectionDescription {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  padding: 2.5rem 2rem;
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.serviceCard:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  transition: height 0.3s ease;
+  z-index: -1;
+}
+
+.serviceCard:hover::before {
+  height: 8px;
+}
+
+.serviceIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: 50%;
+  color: var(--color-primary);
+  transition: background-color 0.3s ease;
+}
+
+.serviceCard:hover .serviceIcon {
+  background-color: rgba(var(--color-primary-rgb), 0.2);
+}
+
+.serviceTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.serviceTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.serviceCard:hover .serviceTitle::after {
+  width: 60px;
+}
+
+.serviceDescription {
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.serviceLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-md);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.serviceLink:hover {
+  color: var(--color-primary-dark);
+}
+
+.serviceLink i, .serviceLink span {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.serviceLink:hover i, .serviceLink:hover span {
+  transform: translateX(5px);
+}
+
+.shapeDivider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(0deg);
+}
+
+.shapeDivider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.shapeFill {
+  fill: var(--color-bg-tertiary);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: var(--z-index-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+  overflow-y: auto;
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.modalOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.serviceModal {
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(20px);
+  border: 1px solid var(--color-border);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.serviceModal.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+  visibility: visible;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  color: white;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 700;
+}
+
+.modalClose {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+  line-height: 1;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modalClose:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.modalBody {
+  padding: 2.5rem;
+}
+
+.modalIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  color: var(--color-primary);
+  border: 2px dashed var(--color-primary);
+}
+
+.modalBody h4 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: var(--color-primary);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.modalBody h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+.modalBody p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.modalFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  background-color: var(--color-bg-tertiary);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+}
+
+.modalFeatures li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.modalFeatures li::before {
+  content: "✓";
+  color: var(--color-success);
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgba(56, 176, 0, 0.1);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modalCta {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.btnPrimary, .btnSecondary {
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.btnPrimary {
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(var(--color-primary-rgb), 0.4);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+}
+
+.btnSecondary:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .modalFeatures {
+    grid-template-columns: 1fr;
+  }
+  
+  .modalIcon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  
+  .modalBody h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .modalCta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .modalCta button {
+    width: 100%;
+  }
+  
+  .modalBody {
+    padding: 1.5rem;
+  }
+  
+  .serviceModal {
+    max-height: 85vh;
+    border-radius: var(--border-radius-md);
+  }
+  
+  .modalOverlay {
+    padding: 0.5rem;
+  }
+} 

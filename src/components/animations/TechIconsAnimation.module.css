@@ -1,0 +1,32 @@
+.animationContainer {
+  position: relative;
+  width: 360px;
+  height: 220px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border: 1px solid rgba(var(--color-primary-rgb), 0.5);
+}
+
+.animationCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .animationContainer {
+    width: 280px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .animationContainer {
+    width: 240px;
+    height: 140px;
+  }
+} 

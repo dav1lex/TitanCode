@@ -1,0 +1,368 @@
+/* Process Section */
+.processSection {
+  margin-top: -50px;
+  background-color: var(--color-bg);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+.sectionDescription {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+.processCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.processCard {
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.processCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.processNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(var(--color-primary-rgb), 0.1);
+  position: absolute;
+  top: -15px;
+  right: 10px;
+}
+
+.processContent {
+  position: relative;
+  z-index: 1;
+}
+
+.processCardTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.processCardText {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* CMS vs Custom Section */
+.cmsVsCustomSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.simplifiedComparison {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.comparisonBox {
+  flex: 1;
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparisonBox:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.comparisonBox h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.comparisonPoint {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.comparisonPoint i {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+}
+
+.comparisonPoint i.fa-plus-circle {
+  color: var(--color-success);
+}
+
+.comparisonPoint i.fa-minus-circle {
+  color: var(--color-danger);
+}
+
+.comparisonPoint p {
+  flex: 1;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.comparisonSummary {
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.comparisonSummary p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comparisonCta {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.comparisonCta:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* FAQ Section */
+.faqSection {
+  padding: 5rem 0;
+  background-color: var(--color-bg);
+}
+
+.faqContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.faqColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqItem {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
+}
+
+.faqQuestion {
+  padding: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.05);
+}
+
+.faqQuestion h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.faqIcon {
+  color: var(--color-primary);
+  transition: transform 0.3s ease;
+}
+
+.faqItem.active .faqIcon {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.25rem;
+}
+
+.faqItem.active .faqAnswer {
+  max-height: 300px;
+  padding: 0 1.25rem 1.25rem;
+}
+
+.faqAnswer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  margin-top: var(--spacing-xxl);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 15%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 15%);
+  opacity: 0.6;
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+.ctaText {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+  color: white;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background-color: white;
+  color: var(--color-primary);
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .processCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .simplifiedComparison {
+    flex-direction: column;
+  }
+  
+  .comparisonBox {
+    width: 100%;
+  }
+  
+  .faqContainer {
+    flex-direction: column;
+  }
+  
+  .faqColumn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .processCards {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .ctaTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .processCard,
+  .comparisonBox {
+    padding: 1.25rem;
+  }
+  
+  .ctaButton {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+} 

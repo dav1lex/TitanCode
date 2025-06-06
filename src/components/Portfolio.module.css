@@ -1,0 +1,320 @@
+.portfolio {
+  background-color: var(--color-bg-tertiary);
+  padding: var(--section-spacing) 0 calc(var(--section-spacing) + 60px);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+.sectionDescription {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Carousel styling */
+.portfolioCarouselContainer {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  overflow: visible;
+}
+
+.portfolioCarousel {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 450px;
+  user-select: none;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+}
+
+.projectCard {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  height: 100%;
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease;
+}
+
+.projectImage {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-top-left-radius: var(--border-radius-lg);
+  border-bottom-left-radius: var(--border-radius-lg);
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectContent {
+  width: 50%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projectCategory {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.projectTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.projectDescription {
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.projectLink:hover {
+  color: var(--color-primary-dark);
+}
+
+.projectLink i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.projectLink:hover i {
+  transform: translateX(5px);
+}
+
+/* Carousel controls */
+.carouselControl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.carouselControl:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.prevControl {
+  left: -35px;
+}
+
+.nextControl {
+  right: -35px;
+}
+
+/* Carousel dots */
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.carouselDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carouselDot.active {
+  background-color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+.portfolioFooter {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.viewAllLink:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.viewAllLink i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.viewAllLink:hover i {
+  transform: translateX(5px);
+}
+
+.shapeDivider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.shapeDivider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.shapeFill {
+  fill: var(--color-bg);
+}
+
+@media (max-width: 992px) {
+  .projectCard {
+    flex-direction: column;
+    height: auto;
+    min-height: 600px;
+  }
+  
+  .projectImage,
+  .projectContent {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .projectImage {
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  }
+  
+  .projectContent {
+    padding: 1.5rem;
+  }
+  
+  .projectTitle {
+    font-size: 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .carouselControl {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .prevControl {
+    left: -25px;
+  }
+  
+  .nextControl {
+    right: -25px;
+  }
+  
+  .carouselDots {
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projectCard {
+    min-height: 700px;
+  }
+  
+  .projectContent {
+    padding: 1.25rem;
+  }
+  
+  .projectTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .projectDescription {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+} 
