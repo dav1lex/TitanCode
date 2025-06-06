@@ -28,17 +28,13 @@ if (!file_exists($autoload_path)) {
     error_response("Could not find vendor/autoload.php. Make sure Composer dependencies are installed.");
 }
 
-// Try to load PHPMailer
+// Load PHPMailer
 require $autoload_path;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 try {
-    // Instead of relying on dotenv, we'll use hardcoded values for now
-    // This is not ideal but will help us debug the immediate issue
-    
-    // Get the posted data
     $postData = file_get_contents("php://input");
     $request = json_decode($postData);
     
@@ -69,32 +65,34 @@ try {
     $mail = new PHPMailer(true);
     
     // Load environment variables from .env file
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
+    try {
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
+    } catch (\Exception $e) {
+        error_response("Could not load environment variables.");
+    }
     
     try {
-        // --- Server settings ---
         $mail->isSMTP();
-        $mail->Host       = $_ENV['SMTP_HOST'];     
-        $mail->SMTPAuth   = true;
-        $mail->Username   = $_ENV['SMTP_USER'];
-        $mail->Password   = $_ENV['SMTP_PASS'];
+        $mail->Host = $_ENV['SMTP_HOST'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['SMTP_USER'];
+        $mail->Password = $_ENV['SMTP_PASS'];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = $_ENV['SMTP_PORT'];
+        $mail->Port = $_ENV['SMTP_PORT'];
         
-        // --- Recipients ---
-        $recipientEmail = $_ENV['RECIPIENT_EMAIL']; 
+        // Recipients
         $mail->setFrom($_ENV['FROM_EMAIL'], $_ENV['FROM_NAME']);
-        $mail->addAddress($recipientEmail);
+        $mail->addAddress($_ENV['RECIPIENT_EMAIL']);
         $mail->addReplyTo($email, $name);
         
-        // --- Content ---
+        // Content
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
         $mail->Subject = 'New Contact Form Submission: ' . $subject;
         
         // Create a nice HTML email body
-        $mail->Body    = "
+        $mail->Body = "
             <html>
             <head>
                 <style>
