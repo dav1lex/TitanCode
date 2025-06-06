@@ -1,6 +1,7 @@
-const fs = require('fs');
-const { SitemapStream, streamToPromise } = require('sitemap');
-const { Readable } = require('stream');
+import fs from 'fs';
+import { SitemapStream } from 'sitemap';
+import { streamToPromise } from 'sitemap';
+import { Readable } from 'stream';
 
 const baseUrl = 'https://titancode.pl';
 

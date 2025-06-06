@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background gradient -->
+  <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#5E17EB" />
+    <stop offset="100%" stop-color="#2A0481" />
+  </linearGradient>
+  <rect width="1200" height="630" fill="url(#bg-gradient)" />
+  
+  <!-- Background grid pattern -->
+  <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7A39F7" stroke-width="0.5" opacity="0.2" />
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid-pattern)" />
+  
+  <!-- Abstract tech elements -->
+  <circle cx="150" cy="480" r="300" fill="#7A39F7" opacity="0.1" />
+  <circle cx="1050" cy="150" r="250" fill="#431099" opacity="0.2" />
+  
+  <!-- Logo/brand element -->
+  <g transform="translate(120, 180)">
+    <rect width="200" height="200" rx="40" fill="#5E17EB" />
+    <text x="100" y="120" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">TC</text>
+  </g>
+  
+  <!-- Title text -->
+  <text x="350" y="200" font-family="Arial, sans-serif" font-size="68" font-weight="bold" fill="white">TitanCode</text>
+  <text x="350" y="280" font-family="Arial, sans-serif" font-size="40" font-weight="normal" fill="white">Professional Web Development</text>
+  
+  <!-- Tagline -->
+  <text x="350" y="380" font-family="Arial, sans-serif" font-size="28" fill="white" opacity="0.9">Custom • Modern • Fast • Secure</text>
+  
+  <!-- Feature bullets -->
+  <g transform="translate(350, 440)">
+    <circle cx="10" cy="0" r="6" fill="white" />
+    <text x="30" y="8" font-family="Arial, sans-serif" font-size="24" fill="white">Custom websites & applications</text>
+  </g>
+  
+  <g transform="translate(350, 490)">
+    <circle cx="10" cy="0" r="6" fill="white" />
+    <text x="30" y="8" font-family="Arial, sans-serif" font-size="24" fill="white">Modern technology stack</text>
+  </g>
+  
+  <g transform="translate(350, 540)">
+    <circle cx="10" cy="0" r="6" fill="white" />
+    <text x="30" y="8" font-family="Arial, sans-serif" font-size="24" fill="white">SEO optimization & performance</text>
+  </g>
+  
+  <!-- Website URL -->
+  <text x="600" y="600" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">titancode.pl</text>
+</svg> 

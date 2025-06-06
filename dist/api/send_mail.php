@@ -68,23 +68,19 @@ try {
     
     $mail = new PHPMailer(true);
     
-    // Load environment variables from .env file
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-    $dotenv->load();
-    
     try {
         // --- Server settings ---
         $mail->isSMTP();
-        $mail->Host       = $_ENV['SMTP_HOST'];     
+        $mail->Host       = 'smtp.titancode.pl';     
         $mail->SMTPAuth   = true;
-        $mail->Username   = $_ENV['SMTP_USER'];
-        $mail->Password   = $_ENV['SMTP_PASS'];
+        $mail->Username   = 'ougur';
+        $mail->Password   = 'Davilex12345.';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = $_ENV['SMTP_PORT'];
+        $mail->Port       = 587;
         
         // --- Recipients ---
-        $recipientEmail = $_ENV['RECIPIENT_EMAIL']; 
-        $mail->setFrom($_ENV['FROM_EMAIL'], $_ENV['FROM_NAME']);
+        $recipientEmail = 'info@titancode.pl'; 
+        $mail->setFrom('info@titancode.pl', 'Contact Form');
         $mail->addAddress($recipientEmail);
         $mail->addReplyTo($email, $name);
         
